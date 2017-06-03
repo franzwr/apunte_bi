@@ -153,6 +153,8 @@ Una vez creados los objetos para filtrar, usted puede seleccionar más de un ele
 
 Todos los objetos trabajarán en base a todos los filtros, de manera global, por lo que debe recordar eliminar filtros que no esté usando. Esto puede hacerse en el diálogo "Current Selections" haciendo click derecho y seleccionado la opción *Clear*.
 
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/5a.png" width="300px"/>
+
 ### Objetos, *Sheet Objects*
 
 Los objetos permiten realizar análisis y visualización de los datos sobre los que hemos filtrado.
