@@ -1,31 +1,29 @@
-<center>
 # Apunte QlikView
 
-[Franz Wompner Risso](mailto:franz.wompner %at% alumnos.usm.cl)
+Franz Wompner Risso
 
-26 de Mayo, 2017
-</center>
+3 de Junio de 2017
 
 ## Tabla de contenidos
 *  Introducción
 *  Descargando el software
-  *  Windows
-  *  Otras plataformas
+   *  Windows
+   *  Otras plataformas
 *  Iniciando el software
-  *  Carga de datos
-    *  Header
-    *  Fuentes de datos
-  *  Visualización del modelo
+   *  Carga de datos
+      *  Header
+      *  Fuentes de datos
+   *  Visualización del modelo
 *  Análisis y visualización de datos
-  *  Filtros, *Select Fields*
-  *  Objetos, *Sheet Objects*
-    *  Statistics Box
-    *  Chart
-      *  Expresiones
-      *  Agregación y ordenamiento
-      *  Obtención de datos
-      *  Filtro por valores
-  *  Pestañas
+   *  Filtros, *Select Fields*
+   *  Objetos, *Sheet Objects*
+      *  Statistics Box
+      *  Chart
+         *  Expresiones
+         *  Agregación y ordenamiento
+         *  Obtención de datos
+         *  Filtro por valores
+      *  Pestañas
 
 ## Introducción
 
