@@ -2,7 +2,7 @@
 
 Franz Wompner Risso
 
-3 de Junio de 2017
+10 de Noviembre de 2017
 
 ## Tabla de contenidos
 *  Introducción
@@ -55,7 +55,7 @@ Si no cuenta con una licencia de Windows, en el sitio de [Microsoft Edge Develop
 
 ## Iniciando el software
 
-Al iniciar el software por primera vez se recomienda crear un archivo nuevo, y evitar el *wizard* seleccionando la opción "Cancel".
+Al iniciar el software por primera vez recomiendo crear un archivo nuevo, y evitar el *wizard* seleccionando la opción "Cancel".
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/1.png" width="300px"/>
 
@@ -83,7 +83,11 @@ Algunos de los campos que pueden incluirse en el *header* son:
 
 #### Fuentes de datos
 
-Para cargar datos de un archivo, usted debe indicar la ubicación del archivo en el sistema de archivos, el nombre que dará a la tabla, y los distintos atributos a cargar. Según el formato del archivo que se carga, el script tiene la forma (usted debe cambiar algunos de los parámetros si es que es necesario):
+Para cargar datos de un archivo, usted debe indicar la ubicación del archivo en el sistema de archivos, el nombre que dará a la tabla, y los distintos atributos a cargar.
+
+Una opción para cargar un archivo de datos es utilizar la opción del menú *Insert > Load Statement > Load from File*; el software insertará el código necesario para cargar el archivo seleccionado.
+
+Alternativamente puede copiar a QlikView el siguiente código según el formato del archivo que se carga, cambiando los parámetros que sean necesarios:
 
 XLSX:
 
@@ -108,6 +112,18 @@ CSV:
     FROM
     [C:\path\al\archivo.csv]
     (txt, codepage is 1252, embedded labels, delimiter is ';', msq);
+
+QVD:
+
+    NombreTabla:
+    LOAD Atributo1,
+         Atributo2,
+         Atributo3,
+         [Atributo con espacios],
+         [Llave foránea] as nombrellave
+    FROM
+    [C:\path\al\archivo.qvd]
+    (qvd);
 
 Considere lo siguiente:
 
