@@ -2,7 +2,7 @@
 
 Franz Wompner Risso
 
-10 de Noviembre de 2017
+26 de Abril de 2019
 
 ## Tabla de contenidos
 *  Introducción
@@ -13,6 +13,9 @@ Franz Wompner Risso
    *  Carga de datos
       *  Header
       *  Fuentes de datos
+         *  Carga usando wizard
+         *  Carga manual
+      *  Pasos finales
    *  Visualización del modelo
 *  Análisis y visualización de datos
    *  Filtros, *Select Fields*
@@ -23,7 +26,7 @@ Franz Wompner Risso
          *  Agregación y ordenamiento
          *  Obtención de datos
          *  Filtro por valores
-      *  Pestañas
+      *  Pestañas y minimizado
 
 ## Introducción
 
@@ -47,7 +50,7 @@ Puede descargar el software de la [página oficial](https://www.qlik.com/us/try-
 ### Otras plataformas
 
 QlikView Desktop sólo se encuentra disponible para Windows.
-Por lo tanto, su mejor opción en otra plataforma consiste en usar una máquina virtual para ejecutar Windows.
+Si usted usa otra plataforma, su mejor alternativa consiste en usar una máquina virtual de Windows para ejecutar QlikView.
 
 Si no cuenta con una licencia de Windows, en el sitio de [Microsoft Edge Development](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) puede descargar máquinas virtuales de Windows gratuitas con expiración dentro de 90 días. Recomiendo seleccionar "IE8 on Win7 (x86)" sobre VirtualBox. Posteriormente debe descomprimir el archivo, abrir el .ova para instalar la máquina virtual, y proceder con las instrucciones para instalación en Windows.
 
@@ -68,7 +71,7 @@ Para la carga de datos a QlikView debe ir a la sección "Edit Script":
 El script de carga de datos consta de un *header* y uno o más descriptores de archivos o fuentes de datos a cargar.
 
 #### Header
-Algunos de los campos que pueden incluirse en el *header* son:
+El *header* viene incluido por defecto al crear un nuevo archivo de QlikView. Algunos de los campos que incluir son:
 
     SET ThousandSep='.';
     SET DecimalSep=',';
@@ -85,7 +88,17 @@ Algunos de los campos que pueden incluirse en el *header* son:
 
 Para cargar datos de un archivo, usted debe indicar la ubicación del archivo en el sistema de archivos, el nombre que dará a la tabla, y los distintos atributos a cargar.
 
-Una opción para cargar un archivo de datos es utilizar la opción del menú *Insert > Load Statement > Load from File*; el software insertará el código necesario para cargar el archivo seleccionado.
+##### Carga usando wizard
+
+La opción recomendada para cargar un archivo de datos es utilizar la opción del menú *Insert > Load Statement > Load from File*; el software insertará el código necesario para cargar el archivo seleccionado.
+
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2a.png" width="300px"/>
+
+En caso de cargar un archivo CSV, verifique que los nombres de cada columna se cargaron adecuadamente eligiendo la opción "Embedded Labels" en el dropdown de "Labels", como se muestra en la imagen. Finalmente presione el botón "Finish".
+
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2b.png" width="300px"/>
+
+##### Carga manual
 
 Alternativamente puede copiar a QlikView el siguiente código según el formato del archivo que se carga, cambiando los parámetros que sean necesarios:
 
@@ -145,9 +158,11 @@ La interpretación de la fecha se realizará según los parámetros definidos en
          if(Edad >= 20 and Edad < 40,'20-40',
          '40+') ) as Rango_Edades
 
+#### Pasos finales
+
 Tras modificar el script de carga de datos, primero **guarde** el archivo, pues si hay un error se perderán todos sus avances no guardados. Luego, presione *Reload* en el editor de scripts.
 
-<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/3.png" width="300px"/>
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2c.png" width="300px"/>
 
 ### Visualización del modelo
 
@@ -185,6 +200,14 @@ El *Statistics Box* permite obtener estadísticas simples sobre los datos filtra
 
 El chart es la herramienta más poderosa que utilizará en QlikView. Éste requiere que usted defina **dimensiones**, correspondiente al eje X del gráfico y **expresiones**, correspondiente al eje Y.
 
+##### Dimensiones
+
+Las dimensiones corresponden al eje X de nuestro gráfico: calculando la expresión deseada en cada una de las dimensiones (por ejemplo, el total de ventas durante el mes de Enero, Febrero, Marzo, etc).
+
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/6a.png" width="300px"/>
+
+Para efectos de la asignatura no será necesario usar más de una dimensión por gráfico; pero si es posible no usar ninguna, con lo cual se podría obtener el total de ventas a lo largo de todos los meses, por ejemplo.
+
 ##### Expresiones
 
 Para construir las expresiones QlikView le ofrece un lenguaje simple, con algunas funciones. Algunos ejemplos de expresiones y funciones:
@@ -200,7 +223,7 @@ Puede explorar todas las funciones disponibles en la pestaña *Functions* de la 
 
 ##### Agregación y ordenamiento
 
-En la sección de expresiones puede elegir que su gráfico esté *agregado*, es decir que cada expresión incluya la suma de las anteriores. Siempre se utilizará la opción "full aggregate", sumando todos los valores anteriores.
+En la sección de expresiones puede elegir que su gráfico esté *agregado*, es decir que cada expresión incluya la suma de las anteriores. En caso de ser necesaria la agregación siempre usaremos la opción "full aggregate", que incluye todos los valores anteriores.
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/8.png" width="600px"/>
 
@@ -214,7 +237,7 @@ Si combina la expresión `Sum(Atributo)/Sum(TOTAL Atributo)`, agregación y orde
 
 ##### Obtención de datos
 
-Si mueve el cursor sobre cierto punto del gráfico, podrá obtener los valores X e Y de ese punto, lo cual puede ser necesario si usted necesita saber la cifra exacta.
+Si mueve el cursor sobre cierto punto del gráfico, podrá obtener los valores X e Y de ese punto, lo cual le servirá para conocer la cifra exacta e indicarla en el informe.
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/11.png" width="300px"/>
 
@@ -225,10 +248,12 @@ Si arrastra y selecciona algunos de los elementos del eje X del gráfico (dimens
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/12.png" width="600px"/>
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/13.png" width="600px"/>
 
-### Pestañas
+### Pestañas y minimizado
 
 Para ordenar su trabajo, QlikView le permite crear diferentes pestañas en las que ingresar sus objetos. Recomiendo contestar cada pregunta en una pestaña nueva eligiendo la opción "Add Sheet". Recuerde que los filtros son **globales**, por lo que los definidos en una pestaña afectarán los resultados de las otras -- recuerde eliminar filtros que no esté usando.
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/14.png" width="300px"/>
 
-Finalmente, recuerde guardar con frecuencia su trabajo en caso de cualquier problema.
+Otra manera de ordenar su trabajo es a través de *minimizar* elementos que no esté usando, haciendo doble click en la parte superior de ellos. Luego es posible restaurarlos de la misma manera.
+
+Finalmente, recuerde guardar con frecuencia su trabajo en caso de cualquier problema con el software.
