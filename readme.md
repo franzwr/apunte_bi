@@ -96,7 +96,7 @@ La opción recomendada para cargar un archivo de datos es utilizar la opción de
 
 En caso de cargar un archivo CSV, verifique que los nombres de cada columna se cargaron adecuadamente eligiendo la opción "Embedded Labels" en el dropdown de "Labels", como se muestra en la imagen. Finalmente presione el botón "Finish".
 
-<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2b.png" width="300px"/>
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2b.png" width="600px"/>
 
 ##### Carga manual
 
@@ -162,7 +162,7 @@ La interpretación de la fecha se realizará según los parámetros definidos en
 
 Tras modificar el script de carga de datos, primero **guarde** el archivo, pues si hay un error se perderán todos sus avances no guardados. Luego, presione *Reload* en el editor de scripts.
 
-<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2c.png" width="300px"/>
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/2c.png" width="600px"/>
 
 ### Visualización del modelo
 
@@ -204,7 +204,7 @@ El chart es la herramienta más poderosa que utilizará en QlikView. Éste requi
 
 Las dimensiones corresponden al eje X de nuestro gráfico: calculando la expresión deseada en cada una de las dimensiones (por ejemplo, el total de ventas durante el mes de Enero, Febrero, Marzo, etc).
 
-<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/6a.png" width="300px"/>
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/6a.png" width="600px"/>
 
 Para efectos de la asignatura no será necesario usar más de una dimensión por gráfico; pero si es posible no usar ninguna, con lo cual se podría obtener el total de ventas a lo largo de todos los meses, por ejemplo.
 
@@ -239,7 +239,7 @@ Si combina la expresión `Sum(Atributo)/Sum(TOTAL Atributo)`, agregación y orde
 
 Si mueve el cursor sobre cierto punto del gráfico, podrá obtener los valores X e Y de ese punto, lo cual le servirá para conocer la cifra exacta e indicarla en el informe.
 
-<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/11.png" width="300px"/>
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/11.png" width="600px"/>
 
 ##### Filtro por valores
 
@@ -255,5 +255,7 @@ Para ordenar su trabajo, QlikView le permite crear diferentes pestañas en las q
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/14.png" width="300px"/>
 
 Otra manera de ordenar su trabajo es a través de *minimizar* elementos que no esté usando, haciendo doble click en la parte superior de ellos. Luego es posible restaurarlos de la misma manera.
+
+<img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/14a.png" width="600px"/>
 
 Finalmente, recuerde guardar con frecuencia su trabajo en caso de cualquier problema con el software.
