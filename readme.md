@@ -26,7 +26,7 @@ Franz Wompner Risso
          *  Agregación y ordenamiento
          *  Obtención de datos
          *  Filtro por valores
-      *  Pestañas y minimizado
+   *  Pestañas y minimizado
 
 ## Introducción
 
@@ -206,7 +206,7 @@ Las dimensiones corresponden al eje X de nuestro gráfico: calculando la expresi
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/6a.png" width="600px"/>
 
-Para efectos de la asignatura no será necesario usar más de una dimensión por gráfico; pero si es posible no usar ninguna, con lo cual se podría obtener el total de ventas a lo largo de todos los meses, por ejemplo.
+Para efectos de la asignatura no será necesario usar más de una dimensión por gráfico; pero sí es posible no usar ninguna, con lo cual se podría obtener el total de ventas a lo largo de todos los meses, por ejemplo.
 
 ##### Expresiones
 
@@ -223,7 +223,7 @@ Puede explorar todas las funciones disponibles en la pestaña *Functions* de la 
 
 ##### Agregación y ordenamiento
 
-En la sección de expresiones puede elegir que su gráfico esté *agregado*, es decir que cada expresión incluya la suma de las anteriores. En caso de ser necesaria la agregación siempre usaremos la opción "full aggregate", que incluye todos los valores anteriores.
+En la sección de expresiones puede elegir que su gráfico esté *agregado*, es decir que cada expresión incluya la suma de las anteriores. En caso de ser necesaria la agregación siempre usaremos la opción "Full Accumulation", que incluye todos los valores anteriores.
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/8.png" width="600px"/>
 
