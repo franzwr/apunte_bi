@@ -50,9 +50,9 @@ Puede descargar el software de la [página oficial](https://www.qlik.com/us/try-
 ### Otras plataformas
 
 QlikView Desktop sólo se encuentra disponible para Windows.
-Si usted usa otra plataforma, su mejor alternativa consiste en usar una máquina virtual de Windows para ejecutar QlikView.
+Si usted usa otro sistema operativo, su mejor opción consiste en usar una máquina virtual de Windows para ejecutar QlikView.
 
-Si no cuenta con una licencia de Windows, en el sitio de [Microsoft Edge Development](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) puede descargar máquinas virtuales de Windows gratuitas con expiración dentro de 90 días. Recomiendo seleccionar "IE8 on Win7 (x86)" sobre VirtualBox. Posteriormente debe descomprimir el archivo, abrir el .ova para instalar la máquina virtual, y proceder con las instrucciones para instalación en Windows.
+Si no cuenta con una licencia de Windows, en el sitio de [Microsoft Edge Development](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) puede descargar máquinas virtuales de Windows gratuitas con expiración dentro de 90 días. Recomiendo seleccionar la plataforma VirtualBox. Posteriormente debe descomprimir el archivo, abrir el .ova para instalar la máquina virtual, y proceder con las instrucciones para instalación en Windows.
 
 <img src="https://raw.githubusercontent.com/franzwr/apunte_bi/master/imgs/0.png" width="600px"/>
 
@@ -71,18 +71,25 @@ Para la carga de datos a QlikView debe ir a la sección "Edit Script":
 El script de carga de datos consta de un *header* y uno o más descriptores de archivos o fuentes de datos a cargar.
 
 #### Header
-El *header* viene incluido por defecto al crear un nuevo archivo de QlikView. Algunos de los campos que incluir son:
+El *header* viene incluido por defecto al crear un nuevo archivo de QlikView. Algunos de los campos que es posible incluir son:
 
-    SET ThousandSep='.';
-    SET DecimalSep=',';
-    SET MoneyThousandSep='.';
-    SET MoneyDecimalSep=',';
-    SET MoneyFormat='$ #.##0,00;-$ #.##0,00';
-    SET TimeFormat='h:mm:ss';
-    SET DateFormat='DD-MM-YYYY';
-    SET TimestampFormat='DD-MM-YYYY h:mm:ss[.fff]';
-    SET MonthNames='ene;feb;mar;abr;may;jun;jul;ago;sep;oct;nov;dic';
-    SET DayNames='lun;mar;miÈ;jue;vie;s·b;dom';
+    SET ThousandSep=',';
+    SET DecimalSep='.';
+    SET MoneyThousandSep=',';
+    SET MoneyDecimalSep='.';
+    SET MoneyFormat='$#,##0.00;($#,##0.00)';
+    SET TimeFormat='hh:mm:ss';
+    SET DateFormat='YYYY-MM-DD';
+    SET TimestampFormat='YYYY-MM-DD hh:mm:ss[.fff]';
+    SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+    SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+    SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+    SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+    SET FirstWeekDay=0;
+    SET BrokenWeeks=1;
+    SET ReferenceDay=0;
+    SET FirstMonthOfYear=1;
+    SET CollationLocale='en-US';
 
 #### Fuentes de datos
 
@@ -144,18 +151,21 @@ Considere lo siguiente:
 
          [Llave foránea] as nombrellave
 
-* Usted puede separar una fecha en día, mes y año cargándola de la siguiente manera:
+* Usted puede separar una fecha en sus componentes cargándola de la siguiente manera:
 
-         day(Fecha) as dia,
+         year(Fecha) as anio,
          month(Fecha) as mes,
-         year(Fecha) as anio
+         day(Fecha) as dia,
+         hour(Fecha) as hora,
+         minute(Fecha) as minuto,
+         second(Fecha) as segundo
 
 La interpretación de la fecha se realizará según los parámetros definidos en el *header*.
 
 * Usted puede separar un atributo en distintos tramos de la siguiente manera:
 
          if(Edad < 20,'0-20',
-         if(Edad >= 20 and Edad < 40,'20-40',
+         if(Edad < 40,'20-40',
          '40+') ) as Rango_Edades
 
 #### Pasos finales
