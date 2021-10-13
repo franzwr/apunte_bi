@@ -45,7 +45,7 @@ El objetivo de esta elección es que usted usar este software para "soltar la ma
 Puede descargar el software de la [página oficial](https://www.qlik.com/us/try-or-buy/download-qlikview), la cual requiere registro; o bien, usando estos links directos:
 
 * [Descarga 32 bits (x86)](http://www.buildingthefuture.biz/gamma/QlikViewDesktop_x86Setup.exe)
-* [Descarga 64 bits (x64)](https://drive.google.com/file/d/0Bz7uSwRh_clwbmZUa2I2T096enc/view?usp=sharing)
+* [Descarga 64 bits (x64)](https://drive.google.com/file/d/0Bz7uSwRh_clwbmZUa2I2T096enc/view?resourcekey=0--UAJmgEo9Qk7RqR1HWR2qQ)
 
 ### Otras plataformas
 
